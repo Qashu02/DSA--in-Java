@@ -1,17 +1,19 @@
-import java.util.*;
+/**
+ * Array
+ */
+public class Array {
 
-class Array {
-    public static void main(String[] args) {
-        int[] arr = new int[5];
-        arr[1] = 0;
-        arr[3] = 5;
-        arr[2] = 3;
-        arr[4] = 3;
-        arr[0] = 2;
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("  " + arr[i] + " ");
+    public void printArray(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            System.out.print(" " + arr[i]);
         }
-        System.out.println();
+
     }
+
+    public static void main(String[] args) {
+        Array arr = new Array();
+        arr.printArray(new int[] { 1, 3, 5, 6, 4, 6, 2 });
+    }
+
 }
