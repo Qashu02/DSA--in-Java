@@ -1,19 +1,20 @@
 /**
- * Array
+ * Array that removes the even integers and count the number of odds
  */
 public class Array {
-
-    public void printArray(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            System.out.print(" " + arr[i]);
-        }
-
-    }
-
     public static void main(String[] args) {
-        Array arr = new Array();
-        arr.printArray(new int[] { 1, 3, 5, 6, 4, 6, 2 });
+
+        int[] arr = { 8, 3, 4, 1, 4, 5, 6, 0 };
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] % 2 != 0) {
+                System.out.print(" " + arr[i]);
+                count++;
+            }
+
+        }
+        System.out.println("\n Numbers of odds in an array :" + count);
     }
 
 }
