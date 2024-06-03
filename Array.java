@@ -1,23 +1,15 @@
-/**
- * Reverse of an array
- */
-public class Array {
+// Array implementation fr minvalue 
+class Array {
     public static void main(String[] args) {
+        int[] arr = { 2, 10, 32, 12, 1 };
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
 
-        int[] arr = { 1, 24, 45, 2, 1, 3 };
-        int start, end;
-        start = 0;
-        end = arr.length - 1;
-        while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
+            if (arr[i] < min) {
+                min = arr[i];
+            }
         }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(" " + arr[i]);
-        }
-
+        System.out.println(min);
     }
+
 }
