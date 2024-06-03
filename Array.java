@@ -1,32 +1,42 @@
-// sending 0's to end of an Array
+
 /**
- * Array
+ * TO find the missing number from the range 
  */
+import java.util.*;
+
 public class Array {
+    public void PrintArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + arr[i]);
+        }
+        System.out.println();
+    }
+
+    public static int FindMissingNumber(int[] arr) {
+
+        int n = arr.length + 1;
+        int sum = n * (n + 1) / 2;
+        for (int num : arr) {
+            sum = sum - num;
+        }
+        return sum;
+    }
+
+    public void arrayDemo() {
+        int[] b = new int[] { 1, 2, 4, 3, 7, 5 };
+
+        for (int i = 0; i < b.length; i++) {
+            System.out.print(b[i]);
+            System.out.println();
+
+        }
+        System.out.println(FindMissingNumber(b));
+    }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 0, 34, 0, 10, 7, 1, 5, 0, 23 };
-        int j = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] != 0 && arr[j] == 0) {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-
-            }
-
-            if (arr[j] != 0) {
-                j++;
-            }
-
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("\n" + arr[i]);
-
-        }
+        Array a = new Array();
+        a.arrayDemo();
 
     }
+
 }
