@@ -1,8 +1,8 @@
-
-// singly LinkedList Insertion of Element at beginning
-import java.util.LinkedList;
-
+/**
+ * linkedlist adding Element at end
+ */
 public class linkedlist {
+
     private ListNode head;
 
     private static class ListNode {
@@ -11,24 +11,9 @@ public class linkedlist {
 
         public ListNode(int data) {
             this.data = data;
-            this.next = null;
+            this.next = next;
         }
 
-    }
-
-    public int display() {
-        ListNode curr = head;
-        // number of element in an LinkedList
-        int count = 0;
-        System.out.print(" Elements of singly LinkedList :");
-        while (curr != null) {
-            System.out.print(" " + curr.data + "-->");
-            curr = curr.next;
-            count++;
-
-        }
-        System.out.println("null");
-        return count;
     }
 
     public void InsertFirst(int val) {
@@ -37,24 +22,42 @@ public class linkedlist {
         head = newnode;
     }
 
-    public static void main(String[] args) {
+    public void InsertEnd(int val) {
+        ListNode newnode = new ListNode(val);
+        if (head == null) {
+            head = newnode;
 
-        linkedlist l = new linkedlist();
-        l.head = new ListNode(10);
-        ListNode sec = new ListNode(2);
-        ListNode third = new ListNode(12);
-        ListNode forth = new ListNode(4);
+        }
+        ListNode current = head;
+        while (current.next != null) {
+            current = current.next;
 
-        l.head.next = sec;
-        sec.next = third;
-        third.next = forth;
-        forth.next = null;
-
-        l.InsertFirst(22);
-        l.InsertFirst(23);
-        int data = l.display();
-        System.out.println("Length of a LinkedList :" + data);
-
+        }
+        current.next = newnode;
     }
 
+    public void display() {
+        ListNode curr = head;
+        while (curr != null) {
+            System.out.print(" " + curr.data + "-->");
+            curr = curr.next;
+
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        linkedlist li = new linkedlist();
+        li.head = new ListNode(23);
+        ListNode sec = new ListNode(12);
+        ListNode third = new ListNode(1);
+
+        li.head.next = sec;
+        sec.next = third;
+        third.next = null;
+        li.InsertFirst(7);
+        li.InsertEnd(12);
+        li.InsertEnd(44);
+        li.display();
+    }
 }
