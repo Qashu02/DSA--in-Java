@@ -1,5 +1,5 @@
 
-// singly LinkedList Printing Element
+// singly LinkedList Insertion of Element at beginning
 import java.util.LinkedList;
 
 public class linkedlist {
@@ -31,7 +31,14 @@ public class linkedlist {
         return count;
     }
 
+    public void InsertFirst(int val) {
+        ListNode newnode = new ListNode(val);
+        newnode.next = head;
+        head = newnode;
+    }
+
     public static void main(String[] args) {
+
         linkedlist l = new linkedlist();
         l.head = new ListNode(10);
         ListNode sec = new ListNode(2);
@@ -43,8 +50,10 @@ public class linkedlist {
         third.next = forth;
         forth.next = null;
 
-        int length = l.display();
-        System.out.println("Length of a LinkedList :" + length);
+        l.InsertFirst(22);
+        l.InsertFirst(23);
+        int data = l.display();
+        System.out.println("Length of a LinkedList :" + data);
 
     }
 
