@@ -26,11 +26,11 @@ public class Array {
         int[] b = new int[] { 1, 2, 4, 3, 7, 5 };
 
         for (int i = 0; i < b.length; i++) {
-            System.out.print(b[i]);
+            System.out.print(" " + b[i]);
             System.out.println();
 
         }
-        System.out.println(FindMissingNumber(b));
+        System.out.println(" " + FindMissingNumber(b));
     }
 
     public static void main(String[] args) {
