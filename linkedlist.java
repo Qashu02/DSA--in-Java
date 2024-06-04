@@ -16,14 +16,19 @@ public class linkedlist {
 
     }
 
-    public void display() {
+    public int display() {
         ListNode curr = head;
+        // number of element in an LinkedList
+        int count = 0;
+        System.out.print(" Elements of singly LinkedList :");
         while (curr != null) {
             System.out.print(" " + curr.data + "-->");
             curr = curr.next;
+            count++;
 
         }
         System.out.println("null");
+        return count;
     }
 
     public static void main(String[] args) {
@@ -32,13 +37,15 @@ public class linkedlist {
         ListNode sec = new ListNode(2);
         ListNode third = new ListNode(12);
         ListNode forth = new ListNode(4);
-        ListNode fifth = new ListNode(7);
+
         l.head.next = sec;
         sec.next = third;
         third.next = forth;
-        forth.next = fifth;
-        fifth.next = null;
-        l.display();
+        forth.next = null;
+
+        int length = l.display();
+        System.out.println("Length of a LinkedList :" + length);
+
     }
 
 }
